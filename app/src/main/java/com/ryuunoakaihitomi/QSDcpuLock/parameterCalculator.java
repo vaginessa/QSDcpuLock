@@ -1,5 +1,5 @@
 package com.ryuunoakaihitomi.QSDcpuLock;
-import android.view.inputmethod.*;
+
 public class parameterCalculator
 {
 	public static int get(boolean cpu0, boolean cpu1, boolean cpu2, boolean cpu3, boolean cpu4, boolean cpu5, boolean cpu6, boolean cpu7)
