@@ -1,14 +1,23 @@
 package com.ryuunoakaihitomi.QSDcpuLock;
-import android.app.*;
-import android.content.*;
-import android.net.*;
-import android.os.*;
-import android.view.*;
-import android.view.View.*;
-import android.widget.*;
-import java.io.*;
-
-import java.lang.Process;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.Toast;
+import java.io.DataOutputStream;
+import android.content.ActivityNotFoundException;
 public class MainActivity extends Activity 
 {
 	private void saveConfig(boolean letAutorunClose)
@@ -201,6 +210,21 @@ public class MainActivity extends Activity
 								ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 								cm.setText("am start -n com.ryuunoakaihitomi.QSDcpuLock/com.ryuunoakaihitomi.QSDcpuLock.intentBoot -e \"parameter\" \"0\"");
 								Toast.makeText(getApplicationContext(), "已复制命令，可以将它粘贴在运行外壳的命令中", Toast.LENGTH_SHORT).show();
+							}
+						});
+					ab.setNegativeButton("捐赠", new DialogInterface.OnClickListener(){
+
+							@Override
+							public void onClick(DialogInterface p1, int p2)
+							{
+								try
+								{
+									startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://QR.ALIPAY.COM/FKX040845ILLL6VFEL7K06")));
+								}
+								catch (ActivityNotFoundException e)
+								{
+									Toast.makeText(getApplicationContext(), "你的系统没有安装浏览器或者不兼容此操作", Toast.LENGTH_SHORT).show();
+								}
 							}
 						});
 					ab.setOnCancelListener(new DialogInterface.OnCancelListener()

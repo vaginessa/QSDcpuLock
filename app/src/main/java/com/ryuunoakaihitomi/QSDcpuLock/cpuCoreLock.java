@@ -1,12 +1,11 @@
 package com.ryuunoakaihitomi.QSDcpuLock;
-import java.io.*;
+import java.io.DataOutputStream;
+import java.io.IOException;
 public class cpuCoreLock
 {
 	public static void set(int number)
 	{
 		String[] s={
-			"setenforce 0",
-			"mount -o rw,remount /sys",
 			"chmod 0644 /sys/module/msm_thermal/core_control/enabled",
 			"echo 1 > /sys/module/msm_thermal/core_control/enabled",
 			"chmod 0444 /sys/module/msm_thermal/core_control/enabled",
@@ -18,8 +17,6 @@ public class cpuCoreLock
 	public static void setReset(boolean isReboot)
 	{
 		String[] s={
-			"setenforce 0",
-			"mount -o rw,remount /sys",
 			"chmod 0644 /sys/module/msm_thermal/core_control/enabled",
 			"chmod 0644 /sys/module/msm_thermal/core_control/cpus_offlined",
 			"echo 0 > /sys/module/msm_thermal/core_control/cpus_offlined",

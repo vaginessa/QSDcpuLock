@@ -8,8 +8,8 @@ android {
         applicationId "com.ryuunoakaihitomi.QSDcpuLock"
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 24
-        versionName "4.1_エロ絵をペロペロと"
+        versionCode 25
+        versionName "4.2"
     }
     buildTypes {
         release {
