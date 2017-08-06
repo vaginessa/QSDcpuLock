@@ -20,6 +20,7 @@ public class cpuCoreLock
 			"chmod 0644 /sys/module/msm_thermal/core_control/enabled",
 			"chmod 0644 /sys/module/msm_thermal/core_control/cpus_offlined",
 			"echo 0 > /sys/module/msm_thermal/core_control/cpus_offlined",
+			"echo \"LINE FOR REBOOT\""
 		};
 		if (isReboot)
 		{
